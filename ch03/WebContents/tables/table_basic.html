@@ -6,19 +6,24 @@
 </head>
 <body>
  <table border=1>
- <thead><!-- 논리적 구분 :이유:웹 접근성 누구나 웹에 접근 가능해야 한다.,두번째 - 영역별 디자인 -->
+ <thead><!--table head 논리적 구분 :이유:웹 접근성 누구나 웹에 접근 가능해야 한다.,두번째 - 영역별 디자인 -->
    <tr>
    	<th></th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th>
    </tr>
 </thead>
-<tbody><!-- 논리적 구분 -->   
+<tbody><!-- table body 논리적 구분 -->   
    <tr>
    <td>1교시</td><td>영어</td><td>국어</td><td>과학</td><td>미술</td><td>기술</td>
    </tr>
    <tr>
    <td>2교시</td><td>도덕</td><td>체육</td><td>영어</td><td>수학</td><td>사회</td>
    </tr>
-</tbody>   
+</tbody>
+<tfoot><!-- table footer -->
+  <tr>
+   <td colspan=6>비고</td>
+   </tr>
+</tfoot>   
  </table>
 
 </body>
