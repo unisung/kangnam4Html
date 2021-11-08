@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+   <fieldset>
+   <legend>입력 양식</legend>
+      <fieldset><!-- form 내의 입력 요소를 묶어서 사용하는 목적의 태그  -->
+         <legend>*필수입력</legend><!-- 그룹별 명칭용 태그 -->
+       <table>
+         <tr>
+         	<td><label for="name">이름</label></td>
+            <td><input id="name" type="text" required /></td>
+         </tr>
+         <tr>
+         <tr>
+            <td><label for="mail">이메일</label></td>
+            <td><input id="mail" type="email" required /></td>
+         </tr>
+       </table>
+      </fieldset>
+      
+          <fieldset>
+            <legend>선택입력</legend>
+       <table>
+         <tr>
+         	<td><label for="addr">주소</label></td>
+            <td><input id="addr" type="text" /></td>
+         </tr>
+         <tr>
+         <tr>
+            <td><label for="phone">전화번호</label></td>
+            <td><input id="phone" type="tel" /></td>
+         </tr>
+       </table>
+      </fieldset>
+   </fieldset>
+   
+   
+   
+   <input type="submit" />
+</form>
+
+</body>
+</html>
