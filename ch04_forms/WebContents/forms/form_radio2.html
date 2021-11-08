@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form basic</title>
+</head>
+<body>
+<form>
+        <table >
+            <tr>
+            <!-- 읽기 전송 출력 요소 label for="id값" -->
+                <td colspan=2><label>이름
+                 <input id="username" type="text" name="username" /></label></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td><!-- 라디오 버튼을 클릭하기 쉽게 사용 -->
+                    <label><input id="man" type="radio" name="gender" value="m" checked/>남자</label>
+                    <label><input id="woman" type="radio" name="gender" value="w" />여자</label>
+                </td>
+            </tr>
+        </table>  
+        <input type="submit" value="가입" /><!-- submit버튼 form내에 있어야함. -->
+    </form>
+</body>
+</html>
