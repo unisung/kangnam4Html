@@ -1,0 +1,210 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>HTML5 Basic Page</title>
+<style>
+/* 1.초기화 하기 */
+*{margin:0;padding: 0; font-family: '맑은 고딕', "Malgun Gothic",Gothic, sans-serif;}
+a{text-decoration: none;}/* 링크태그 언더바 없애기 */
+li{list-style: none}/* 리스트의 bullet . 1,2,3없애기  */
+</style>
+<!-- 기본 클래스  -->
+<style>
+body{
+	 width: 960px; margin: 0 auto;/* 중앙 배치 */
+	 background: #e6e6e6;
+}
+
+#page-wrapper{
+	background: white;
+	margin: 40px;/* top right bottom left */ 
+	padding: 10px 20px;/* top bottom:10px; right left:20px;  */
+	border-radius: 5px;/* 왼쪽상단 5px, 오른쪽상단 5px, 오른쪽 하단 5px, 왼쪽 하단 5px; */
+	box-shadow: 0 2px 6px rgba(100,100,100,0.3);/* 투명도 70% */ 
+}
+</style>
+<!-- 헤더 구하기 -->
+<style>
+#main-header{padding: 40px 50px;/*위/아래 40px, 좌/우 50px  */}
+.master-title{font-size: 30px; color: #181818;}
+.master-description{font-size: 15px; font-weight: 500;  color: #383838;}
+</style>
+<!--4. 네이게이션 및 폴다운 메뉴 구성하기 -->
+<style>
+#main-navigation{border-top:1px solid #c8c8c8; border-bottom: 1px solid #c8c8c8; 
+                   margin-bottom: 20px; height: 40px;}
+.outer-menu-item{float: left; position: relative;}
+/* 바깥쪽 메뉴에 마우스를 올렸을 때 메뉴나타나게 하기 */
+.outer-menu-item:hover{background: black; color:white;}
+.outer-menu-item:hover > .inner-menu{display: block;}
+
+.menu-title{display:block; height: 30px; line-height: 30px; text-align: center; 
+				padding: 5px 20px;}
+.inner-menu{display: none ; /*메뉴 없애기  */ position: absolute; 
+              top:40px; left:0; width: 100%;/*부모요소크기만큼 */
+              background: white;
+              box-shadow: 0 2px 6px rgba(5,5,5,0.9);
+              z-index: 1000;
+              text-align: center;
+              }	
+.inner-menu-item > a{display: block; padding: 5px 10px; color: black;}   
+.inner-menu-item > a:hover{background: black; color: white;}                         			                   
+</style>
+<!--5. 검색 양식 추가  -->
+<style>
+.search-bar{height: 26px; padding: 7px;}
+.input-search{display: block; float:left; background-color: #fff; 
+               border:1px solid #ccc; border-radius: 15px 0 0 15px;
+               box-shadow: inset 0  1px 1px rgba(0,0,0,0.05);
+               width: 120px; height: 24px;
+               font-size: 12px;
+               color: #555;
+               }
+.input-search:focus{border-color: rgba(82,168,236,0.8); 
+                     outline: 0; box-shadow: inset 0  1px 1px rgba(0,0,0,0.05); }
+.input-search-submit{ float: left; width:50xp; height: 26px; 
+                     border-radius: 0 15px 15px 0; border:1px solid #ccc;
+                     margin-left: -1px; vertical-align: top; display: inline-block;
+                     }                                              
+</style>
+<!--6. 본문 추가  -->
+<style>
+#content{overflow: hidden;}
+#main-section{float: left; width: 710px;}
+#main-aside{float: right; width: 200px;}
+</style>
+<!--6.-2 본문 추가   -->
+<style>
+article{padding: 0 10px 20px 10px; border-bottom:1px solid #c8c8c8;}
+.article-header{padding: 20px 0;}
+.article-title{ font-size: 25px; font-weight: 500; padding-bottom: 10px;}
+.article-date{font-size: 13px;}
+.article-body{font-size: 14px;}
+</style>
+<!--6. 사이드 메뉴  -->
+<style>
+.aside-list{padding:10px 0 30px 0;}
+.aside-list > h3{font-size: 15px; font-weight: 600; }
+.aside-list li a {margin-left: 8px;}
+.aside-list li a{
+  margin-left: 8px;
+  font-size: 13px;
+  color:#6c6c6c;
+}
+</style>
+</head>
+<body>
+  <!-- 전체를 감싸는 태그 -->
+  <div id="page-wrapper">
+  <!-- 헤더 -->
+  <header id="main-header">
+   <hgroup>
+  	<h1 class="master-title">HTML5 Example Preview</h1> 
+    <h2 class="master-description">한빛아카데미</h2>
+   </hgroup>
+  </header>
+  <!-- 내비게이션 -->
+  <nav id="main-navigation">
+     <div class="pull-left">
+        <ul class="outer-menu">
+        	<li class="outer-menu-item">
+        		<span class="menu-title">HTML5</span>
+        		<ul class="inner-menu">
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		</ul>
+        	</li>
+        	<li class="outer-menu-item">
+        		<span class="menu-title">CSS3</span>
+        		<ul class="inner-menu">
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		</ul>
+        	</li>
+        	<li class="outer-menu-item">
+        		<span class="menu-title">CSS3</span>
+        		<ul class="inner-menu">
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		  	<li class="inner-menu-item"><a href="#">데이터</a></li>
+        		</ul>
+        	</li>
+        </ul><!-- ul끝. -->
+     </div><!-- .pull-left끝.  -->
+     <div class="pull-right">
+       <div class="search-bar">
+          <form>
+           <input type="search" name="input-search" class="input-search">
+           <input type="submit" class="input-search-submit" value="검색">
+          </form>
+       </div>
+     </div><!--pull-right 끝.  -->
+  </nav>
+  <!-- 본 문 -->
+  <div id="content">
+    <!-- 본 문 좌측 영역  -->
+     <section id="main-section">
+       <article>
+       	<div class="article-header">
+       	    <h1 class="article-title">HTML5 개요와 활용</h1>
+       	    <p class="article-date">2019년 02월 14일</p>
+       	</div>
+       	<div class="article-body">
+       		<img src="http://placehold.it/430x280">
+       	    <br>
+       	    <br>
+       	    <p>Lorem inpsum dolor sit amet.</p>
+       	    <br>
+       	    <p>Proin ut fringilla sapien..</p>
+       	</div><!--article-body 끝.  -->
+       </article>
+       <article>
+       <div class="article-header">
+       	    <h1 class="article-title">HTML5 개요와 활용</h1>
+       	    <p class="article-date">2019년 02월 17일</p>
+       	</div>
+       	<div class="article-body">
+       		<img src="http://placehold.it/430x280">
+       	    <br>
+       	    <br>
+       	    <p>Lorem inpsum dolor sit amet.</p>
+       	    <br>
+       	    <p>Proin ut fringilla sapien..</p>
+       	</div><!--article-body 끝.  -->
+       </article>
+     </section><!--section 끝.  -->
+     <!-- 본 문 우측 영역  -->
+     <aside id="main-aside">
+      <div class="aside-list">
+         <h3>카테고리</h3>
+         <ul>
+         	<li><a href="#">데이터</a></li>
+         	<li><a href="#">데이터</a></li>
+         	<li><a href="#">데이터</a></li>
+         	<li><a href="#">데이터</a></li>
+         	<li><a href="#">데이터</a></li>
+         </ul>
+      </div><!--aside-list 끝.  -->
+     <div class="aside-list">
+         <h3>최근 글</h3>
+         <ul>
+         	<li><a href="#">데이터</a></li>
+         	<li><a href="#">데이터</a></li>
+         	<li><a href="#">데이터</a></li>
+         	<li><a href="#">데이터</a></li>
+         </ul>
+      </div><!--aside-list 끝.  -->
+     </aside>
+  </div><!-- 본 문 끝. -->
+  <!-- 푸터 -->
+  <footer id="main-footer">
+  	<a href="#">ITCookBook HTML5 Programming</a>
+  </footer>
+  </div>
+</body>
+</html>
