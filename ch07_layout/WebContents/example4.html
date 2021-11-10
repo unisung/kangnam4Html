@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#container{
+	width: 500px; height: 300px;
+	border: 3px  solid black;
+	overflow: hidden;
+	position: relative;
+}
+
+.circle{
+	width: 100px; height: 100px;
+	border-radius: 50% 50%;
+}
+#red{ background: red;
+      position:absolute;
+	  left:20px; top:20px;
+	}
+#green{ background: green;
+	  position:absolute;
+	  right:20px; top:20px;
+}
+#blue{ background: blue;
+       position:absolute;
+	   right:20px; bottom:20px;
+}
+#yellow{ background: yellow;
+	   position:absolute;
+	   left:20px; bottom:20px;
+}
+</style>
+</head>
+<body>
+<h1>Dummy Text</h1>
+    <div id="container">
+        <div id="red" class="circle"></div>
+        <div id="green" class="circle"></div>
+        <div id="blue" class="circle"></div>
+        <div id="yellow" class="circle"></div>
+    </div>
+<h1>Dummy Text</h1>
+</body>
+</html>
