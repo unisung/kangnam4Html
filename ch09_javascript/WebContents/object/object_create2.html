@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>Insert title here</title></head>
+<body>
+<script>
+  //객체를 선언합니다.
+  //Object()생성자를 호출하여 객체 생성
+  var product = new Object();
+  //빈 오브젝트 생성
+  alert(product);
+  
+  //빈 객체에 키: 값 저장
+  product['제품명']='7D 건조 망고';
+  product['유형']='당절임';
+  product['성분']='망고, 설탕, 메타중아황산나트륨, 치자황색소';
+  product['원산지']='필리핀';
+  
+  //출력
+  alert(product['제품명']);/* 키명 접근 object명['키명']  */
+  alert(product.제품명);/* .으로 접근 dot notation objec명.키명 */
+</script>
+</body>
+</html>
