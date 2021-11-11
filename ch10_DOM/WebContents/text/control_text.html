@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM Basic text html</title>
+<script >
+ //이벤트 연결
+  window.onload = function(){
+	 	var output='';
+	 	for(var i=0;i<10;i++){
+	 		output+='<h1>Header - ' + i + '</h1>';
+	 	}
+	 	
+	 	//텍스트로 출력
+	 	//document.body.textContent = output;
+	 	//html형태로 출력
+	 	document.body.innerHTML = output;
+ };
+</script>
+</head>
+<body>
+ 
+
+</body>
+</html>
