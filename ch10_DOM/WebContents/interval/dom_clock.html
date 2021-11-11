@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+ var id='';
+   window.onload=function(){
+	   id = setInterval(function(){
+		   var now = new Date();
+		   clock.innerHTML = now.toString();
+	   },1000);
+	   alert(id);
+   };
+</script>
+<script>
+//clearInterval(setInterval()함수의 리턴 된 id를 매개변수로 사용);
+function stopEvent(){
+  clearInterval(id);
+}
+</script>
+</head>
+<body>
+<h1 id='clock'></h1>
+<button onclick="stopEvent()">이벤트 종료</button>
+</body>
+</html>
