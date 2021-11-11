@@ -18,12 +18,18 @@
 	alert(year+":"+month+":"+day+":"+hours+":"+minutes);
 </script>
 <script>
-    if(hours < 12){
-    	//표현식 "hours < 12"가 참일 때 실행.
-    	alert('오전입니다.');/* 며령어의 끝 ; 붙여야됨. */
-    }
-    if(hours >= 12){
-    	alert('오후입니다.');
+    if(hours < 5){
+    	alert('잠을 자렴....');/* 며령어의 끝 ; 붙여야됨. */
+    }else if(hours < 7){//5~7
+    	alert('준비');
+    }else if(hours < 9){//7~9
+        alert('출근');
+    }else if(hours < 12){//9~12
+    	alert('워크');
+    }else if(hours < 14){//12~14
+    	alert('식사');
+    }else{
+    	alert("각종 업무");
     }
 </script>
 
