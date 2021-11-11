@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function check(event){
+	alert(event.innerHTML);
+}
+</script>
+</head>
+<body>
+<!-- 이벤트를 발생시킨 객체 자신을 check()함수로 전달시 this를 매개변수로 전달. -->
+<button onclick="check(this)">hello</button>
+</body>
+</html>
