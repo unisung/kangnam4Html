@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+//callback함수 - 다른 함수의 매개변수로 전달되는 함수.
+//함수를 선언합니다.
+ function callTenTimes(callback){
+	 //10회 반복합니다.
+	 for(var i=0;i<10;i++){
+		 callback();//매개변수롤 전달된 함수를 호출합니다.
+	 }
+ }
+
+ //변수를 선언합니다.
+ var callback = function(){alert('함수 호출');};
+ 
+ //callTenTimes호출
+ callTenTimes(callback);
+ 
+</script>
+
+</body>
+</html>
