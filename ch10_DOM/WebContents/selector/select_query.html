@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>DOM Basic id로 접근</title>
+<script>
+    //이벤트 연결
+    window.onload=function(){
+    	//문서 객체를 선택합니다.
+    	var header = document.querySelector('h1');
+    	
+    	//문서객체를 조작
+    	header.style.color='orange';
+    	header.style.background='red';
+    	header.innerHTML ='From Javascript';//요소의 text변경
+    };
+</script>
+</head>
+<body>
+ <h1>Header</h1>
+ <h1>Header</h1>
+ <h1>Header</h1>
+</body>
+</html>

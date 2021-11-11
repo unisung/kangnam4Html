@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>DOM Basic id로 접근</title>
+<script>
+    //이벤트 연결
+    window.onload=function(){
+    	//문서 객체를 선택합니다.
+    	//querySelectorAll(선택자) 리턴값은 배열로 전달됨.
+    	var headers = document.querySelectorAll('h1');
+    	
+     for(var i=0;i<headers.length;i++){	
+    	//문서객체를 조작
+    	headers[i].style.color='orange';
+    	headers[i].style.background='red';
+    	headers[i].innerHTML ='From Javascript';//요소의 text변경
+     }
+    };
+</script>
+</head>
+<body>
+ <h1>Header</h1>
+ <h1>Header</h1>
+ <h1>Header</h1>
+</body>
+</html>
