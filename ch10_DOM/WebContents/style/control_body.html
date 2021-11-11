@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM BASIC setAttribute, getAttribute</title>
+<script>
+ window.onload=function(){
+	 /* 동적으로 사용자정의 속성을 지정  */
+	 document.body.setAttribute('data-custom','value');
+	 
+	 //속성을 출력합니다.
+	 var dataCustom = document.body.getAttribute('data-custom');
+	 alert(dataCustom);
+ };
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

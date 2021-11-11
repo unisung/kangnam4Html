@@ -8,12 +8,15 @@
  window.onload=function(){
 	//문서 객체 추가
 	var output ='';
+	//
 	 for(var i=0;i<256;i++){
 		output =output+'<div></div>';
 	}
-	
+	alert(output);
+	//html로 적용
 	document.body.innerHTML=output;
 	
+	//동적으로 생성된 div들에 스타일 지정
 	var divs = document.querySelectorAll('div');
 	for(var i=0;i<divs.length;i++){
 		var div = divs[i];
