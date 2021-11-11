@@ -8,12 +8,12 @@
  window.onload=function(){
 	//문서 객체 추가
 	var output ='';
-	for(var i=0;i<256;i++){
-		output +='<div></div>';
+	 for(var i=0;i<256;i++){
+		output =output+'<div></div>';
 	}
 	
 	document.body.innerHTML=output;
-	//
+	
 	var divs = document.querySelectorAll('div');
 	for(var i=0;i<divs.length;i++){
 		var div = divs[i];
@@ -23,10 +23,8 @@
 		div.style.background = 'rgb('+i+','+i+','+i+')';
 	}
 };
-
 </script>
 </head>
 <body>
-
 </body>
 </html>
