@@ -3,9 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>기본 이벤트(기본동작) 방지</title>
+<script>
+ window.onload = function(){
+	 var button = document.getElementById('button');
+	 alert(button);
+	 
+	 //이벤트를 연결
+	 //button.onclick=function(){
+	//	return false; 
+	 //};
+	 button.onclick=function(event){event.preventDefault();};
+ };
+</script>
 </head>
 <body>
-
+<!-- default 이벤트 - href로 이동. -->
 <a id="button" href="http://hanbit.co.kr"><img src="./images/hanbit.jpg"></a>
 
 </body>
