@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+ //객체를 선언합니다.
+ /*
+ class Person { String name="윤인성"; 
+   void eat(String food){System.out.println(this.name+"이 "+food+"를 먹습니다" );}}
+ Person person = new Person(); 
+ person.eat("밥");
+ */
+ var person={
+	name:'윤인성',
+	eat:function(food){
+		alert(this.name+"이 "+food+'을/를 먹습니다.');
+	}
+  };
+ 
+//키보드로 부터 값을 받아서 출력-스캐너와 유사
+//prompt에서 취소버튼을 누르면 값이 전달되지않음.
+//food는 null값
+//prompt(메세지,미입력시 기본값);
+//리턴타입은 string타입
+var food=prompt('먹을 음식명을 입력하세요','밤');
+
+ //메소드 호출
+ person.eat(food);
+ 
+</script>
+
+</body>
+</html>
