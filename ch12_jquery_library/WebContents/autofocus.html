@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+ window.onload=function(){
+	 var input_1=document.querySelectorAll('input')[0];
+	 var input_2=document.querySelectorAll('input')[1];
+	 
+	 input_1.onkeydown=function(){
+		 if(input_1.value.length>=6){
+			 input_2.focus();
+		 }
+	 };
+	 
+	 input_2.onkeydown=function(event){
+		 var event = event || window.event;
+		 if(event.keyCode==8 && input_2.value.length ==0 ){
+			 input_1.focus();
+		 }
+	 };
+ };
+</script>
+</head>
+<body>
+ <input maxlength="6"><span>-</span><input maxlength="7">
+</body>
+</html>
