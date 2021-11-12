@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$().ready(function(){
+	//이벤트 연결
+	$('button').click(function(){
+		$('.page').fadeToggle('slow');
+	});
+});
+</script>
+
+</head>
+<body>
+<button>Toggle show</button>
+<div class="page">
+  <h1>Lorem ipsum dolor sit amet</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis urna sed turpis luctus laoreet. Fusce auctor maximus finibus. Nam ac dictum velit. Donec sit amet bibendum erat. Sed varius arcu est. Nullam maximus, libero id sollicitudin malesuada, nunc nunc varius neque, eu rhoncus dui nunc ac felis. Integer sit amet turpis metus. Nam id efficitur velit. Mauris suscipit, odio et dictum fermentum, nulla orci fermentum quam, a condimentum magna justo dictum leo. Aenean et odio mattis, maximus elit sed, fringilla est. Sed eget purus sit amet arcu elementum aliquet in eu mi. Donec dui tortor, viverra in fermentum ut, aliquam ac ipsum.</p>
+</div>
+</body>
+</html>
