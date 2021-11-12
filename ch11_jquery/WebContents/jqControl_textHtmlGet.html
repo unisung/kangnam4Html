@@ -1,0 +1,24 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+ $().ready(function(){
+	 //내부글자 변경하기
+	 //텍스트 요소
+	 var text = $('h1:nth-child(1)').text();//text가져오기
+	 //html요소
+	 var html = $('h1:nth-child(2)').html();//html가져오기
+	 
+	 //출력
+	 alert("text:"+text);
+	 alert("html:"+html);
+ });
+</script>
+</head>
+<body>
+<h1>Header - 0<a href="#">text()</a></h1>
+<h1>Header - 1<a href="#">html()</a></h1>
+</body>
+</html>
