@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.onload=function(){
+	//변수 선언
+	var count=0;
+	var image = document.getElementById('image');
+	var frames =['0.png','1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png',
+		         '10.png','11.png','12.png','13.png','14.png'];
+    //타이머 실행
+    setInterval(function(){
+    	image.src='./images/'+frames[count%frames.length];// './images/0.png'
+    	count=count + 1;
+    },1000/20);
+};
+</script>
+</head>
+<body>
+<img id="image">
+</body>
+</html>
