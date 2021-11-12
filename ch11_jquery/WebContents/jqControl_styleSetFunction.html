@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>jQuery Basic</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$().ready(function(){
+	//문서객체 추가
+	var output = '';
+	for(var i=0;i<256;i++) output+='<div></div>';
+	document.body.innerHTML=output;
+	
+	//스타일 지정
+	$('div').css({
+		height:2,
+		backgroundColor :function(index){
+			return 'rgb('+index+','+index+','+index+')';
+		}
+	});
+});
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
