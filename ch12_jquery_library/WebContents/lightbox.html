@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 플러그인 경로 설정 -->
+<link rel="stylesheet" href="./css/jquery.lightbox.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="./js/jquery.lightbox.js"></script>
+<!-- 스크립트 작성  -->
+<script>
+ $(document).ready(function(){
+	 $('a.light').lightBox();
+ });
+</script>
+</head>
+<body>
+<a class="light" href="./photos/image1.jpg">
+ <img src="./photos/thumb_image1.jpg" width="72" height="72" alt="" />
+</a>
+<a class="light" href="./photos/image2.jpg">
+<img src="./photos/thumb_image2.jpg" width="72" height="72" alt="" />
+</a>
+<a class="light" href="./photos/image3.jpg">
+<img src="./photos/thumb_image3.jpg" width="72" height="72" alt="" />
+</a>
+</body>
+</html>
