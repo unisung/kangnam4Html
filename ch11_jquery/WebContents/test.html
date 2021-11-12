@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//Date 객체를 선언합니다. 현재 시간 측정
+var date = new Date();//Date객체 생성자 호출-core객체
+
+//요소추출
+var year = date.getFullYear();
+var month = date.getMonth() + 1; //getMonth()의 값은 0~11까지
+var day = date.getDay();//요일
+var date1 = date.getDate();//날짜
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+
+alert(year+":"+month+":"+date1+":"+hours+":"+minutes);
+</script>
+
+</head>
+<body>
+<!-- <script>
+  var date = new Date();
+  alert(date.getDay());//요일
+  alert(date.getDate());//날짜
+</script> -->
+
+</body>
+</html>
