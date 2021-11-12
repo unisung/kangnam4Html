@@ -8,12 +8,14 @@
 <script>
 $().ready(function(){
 	/*css(속성, 값) 속성값 지정하기 */
-	$('.box').css('float','left');
-	$('.box').css('margin',10);
-	$('.box').css('width',100);
-	$('.box').css('height',100);
-	$('.box').css('backgroundColor','red');
-	
+	$('.box').css({
+		float:'left',
+		margin:10,
+		width:100,
+	    height:100,
+	    backgroundColor:'red'
+	});
+			
 	alert($('.box').css('float'));/* css(속성) 속성값 가져오기 */
 });
 </script>
