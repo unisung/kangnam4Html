@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Create</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$().ready(function(){
+	//문서객체 생성
+	//$('<h1>Create Document Object By jQuery</h1>').appendTo('body');
+ for(var i=0;i<10;i++){	
+	 var $dynamic = $('<h1>Create Document Object '+i+' By jQuery</h1>').css({
+		backgroundColor : 'black',
+		color: 'red'
+	});
+	 
+	 //문서 객체를 추가
+	 $('body').append($dynamic);
+  }
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>
