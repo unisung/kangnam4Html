@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+/* 콜백함수를 두개이상 연결 */
+$().ready(function(){
+	$('h1').hover(function(){
+		$(this).css({
+			background:'red',
+			color:'white'
+		});
+	},function(){
+		$(this).css({
+			background:'',
+			color:''
+		});
+	});
+});
+</script>
+</head>
+<body>
+<h1>click</h1>
+</body>
+</html>
