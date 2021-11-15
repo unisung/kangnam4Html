@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head>
+<meta charset="UTF-8"> 
+    <title>Netflix</title> 
+<!-- 초기화 -->
+    <style>
+        * {margin: 0; 
+           padding: 0; 
+           font-family: 'Impact', sans-serif;}
+        a {text-decoration: none; 
+           color: white;}
+        img {border: 0;}
+        li {list-style: none;}
+        html {background: black;}
+    </style>
+    
+<!-- 헤더 -->
+    <style>
+        #main-header {height: 180px; 
+        			  background: black; 
+        			  position: relative;}
+        .header-search-form {float: left;}
+        .header-title {position: absolute;
+					   width: 800px; 
+					   height: 200px;
+			           left: 50%; 
+			           margin-left: -250px;
+			           background: url('./images/logo_n.png');
+			           background-size: contain;
+			           background-repeat: no-repeat;
+			           text-indent: -9999px;}
+        .header-menu {float: right;}
+    </style>
+    
+<!-- 드롭다운 -->
+    <style>
+        .outer-menu {float: left;
+		             width: 100px; height: 20px;
+		             line-height: 20px;
+		             padding: 10px 0;
+		             position: relative;
+		             text-align: center;
+					 font-size: 13px;
+		             font-weight: bold;
+	  				 z-index: 9999;}
+        .outer-menu:hover {background: black;}
+        .inner-menu {display: none;
+		             background: black;
+		             margin-top: 10px;
+		             width: 100%;
+		             border-top: 1px solid #cccaca;
+		             box-shadow: 0 2px 4px rgba(34,25,25,0.5);}
+        .inner-menu a {display: block;
+		               padding: 5px 10px;
+		               z-index: 5000;}
+        .inner-menu a:hover {background: gray;}
+    </style>
+    
+<!-- 네비게이션 메뉴 -->
+    <style>
+        #main-navigation {height: 30px;
+			              background: #E50914;
+			              box-shadow: 1px 3px 3px rgba(34, 25, 25, 0.4);}
+        #main-navigation > ul {overflow:hidden;
+            				   text-align: center;}
+        #main-navigation > ul > li {display: inline;
+        							padding: 0 30px;
+        							height:30px;
+						            line-height: 30px;
+						            font-size: 17px;
+						            font-weight: bold;
+						            color: black;}
+        #main-navigation > ul > li:hover {background: black;
+            							  border-radius: 10px;}
+    </style>
+    
+<!-- 검색 양식 -->
+    <style>
+        .header-search-form {height: 26px;
+            				 padding: 7px;}
+        .input-search {display: block;
+			           float: left;			
+			           background-color: #FFFFFF;
+			           border: 1px solid #CCCCCC;
+			           border-radius: 15px 0 0 15px;
+			           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);			
+			           width: 120px; height: 26px;
+			           padding: 0 0 0 10px;
+			           font-size: 12px;
+			           color: black;}
+        .input-search:focus {border-color: rgba(82, 168, 236, 0.8);
+            				 outline: 0;
+            				 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);}
+        .input-search-submit {display: block;
+				              float: left;
+				              width: 50px; height: 26px;
+				              border-radius: 0 15px 15px 0;
+				              border: 1px solid #CCCCCC;
+				              margin-left: -1px;
+				              vertical-align: top;
+				              display: inline-block;}
+    </style>
+    
+<!-- 종이 스타일 -->
+    <style>
+        .paper {width: 190px;
+	            margin-top: 10px;
+	            padding: 15px 15px 0;
+	            font-size: 11px;
+	            background: black;
+	            box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+	            color: white;}
+        .paper-content {margin: 0 -15px;
+			            margin-top: 10px;
+			            padding: 10px 15px;
+			            background: black;
+			            overflow: hidden;}
+        .paper-description {margin: 10px 0;}
+        .paper-link {display: block;
+            		 float: left;}
+        .paper-text {float: left;
+		             width: 150px;
+		             margin-left: 10px;
+		             color: white;}
+    </style>
+    
+<!-- 섹션 -->
+    <style>
+        /* 미디어 쿼리를 지원하지 않는 웹 브라우저 */
+        #main-section {width: 920px;
+            		   margin: 0 auto;}
+
+        /* 3줄 */
+        @media (max-width: 919px) {
+            #main-section { width: 690px; }
+        } 
+
+        /* 4줄 */
+        @media (min-width: 920px) and (max-width:1149px) {
+            #main-section { width: 920px; }
+        } 
+
+        /* 5줄 */
+        @media (min-width:1150px) and (max-width:1379px) {
+            #main-section { width: 1150px; }
+        }
+
+        /* 6줄 */
+        @media (min-width:1380px) {
+            #main-section { width: 1380px; }
+        }
+    </style>
+    
+<!-- 라이트박스 -->
+    <style>
+        #darken-background {position: absolute;
+				            top: 0; left: 0; right: 0;
+				            height: 100%; 
+				            display: none;
+				            background: rgba(0, 0, 0, 0.9);
+				            z-index: 10000;
+				            overflow-y: scroll;}
+        #lightbox {width: 700px;
+		           margin: 20px auto; padding: 15px;
+		           border: 1px solid #333333;
+		           border-radius: 5px;
+		           background: white;
+		           box-shadow: 0 5px 5px rgba(34, 25, 25, 0.4);
+		           text-align: center;}
+        .user-information {overflow: hidden; text-align: left;}
+        .user-information-image {float: left; width: 70px;}
+        .user-information-text {float: right; width: 620px; }
+        .lightbox-splitter {margin: 10px 0;}
+    </style>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/jquery.masonry.min.js"></script>
+    <script src="js/jquery.imagesloaded.min.js"></script>
+    
+    <script>
+        // 풀다운 메뉴
+        $(document).ready(function () {
+            // 풀다운 메뉴
+            $('.outer-menu').hover(function () {
+                $(this).find('.inner-menu').css('display', 'block');
+            }, function () {
+                $(this).find('.inner-menu').css('display', 'none');
+            });
+        });
+
+        // 페이지
+        $(document).ready(function () {
+            // 이미지 로드 확인
+            $('#main-section').imagesLoaded(function () {
+                // jQuery Masonry 플러그인 적용
+                $('#main-section').masonry({
+                    itemSelector: '.paper',
+                    columnWidth: 230,
+                    isAnimated: true
+                });
+            });
+});         
+        
+        // 라이트 박스
+        $(document).ready(function () {
+            function showLightBox() {
+                // 라이트박스를 보이게 합니다.
+                $('#darken-background').show();
+                $('#darken-background').css('top', $(window).scrollTop());
+                // 스크롤을 못하게 합니다.
+                $('body').css('overflow', 'hidden');
+            }
+
+            function hideLightBox() {
+                // 라이트박스를 안 보이게 합니다.
+                $('#darken-background').hide();
+
+                // 스크롤을 하게 합니다.
+                $('body').css('overflow', '');
+            }
+
+            // 라이트박스 제거 이벤트
+            $('#darken-background').click(function () {
+                hideLightBox();
+            });
+
+              // 클릭 이벤트 연결
+            $('.paper').click(function () {
+                showLightBox();
+            });
+
+            // 라이트박스 제거 이벤트 보조
+            $('#lightbox').click(function (event) {
+                event.stopPropagation()
+            });
+        });
+    </script>
+</head> 
+
+<body> 
+<!-- 헤더 --> 
+    <header id="main-header"> 
+        <div class="header-search-form"> 
+            <form> 
+                <input type="search" class="input-search" /> 
+                <input type="submit" class="input-search-submit" value="검색" /> 
+            </form> 
+        </div> 
+        <h1 class="header-title">Netflix</h1> 
+        <div class="header-menu"> 
+            <ul class="outer-menu"> 
+                <li> 
+                    <a href="#">언어</a> 
+                    <ul class="inner-menu"> 
+                        <li><a href="#">English</a></li> 
+                        <li><a href="#">한국어</a></li>
+                    </ul> 
+                </li> 
+            </ul> 
+            <ul class="outer-menu"> 
+                <li> 
+                    <a href="#">로그인</a> 
+                    <ul class="inner-menu"> 
+                        <li><a href="#">회원가입</a></li> 
+                        <li><a href="#">아이디찾기</a></li> 
+                        <li><a href="#">비밀번호찾기</a></li>
+                    </ul> 
+                </li> 
+            </ul> 
+        </div> 
+    </header> 
+    
+<!-- 네비게이션 메뉴 --> 
+    <nav id="main-navigation"> 
+        <ul> 
+            <li><a href="#">TOP 100</a></li> 
+            <li><a href="#">이달의 신작</a></li> 
+            <li><a href="#">추천작</a></li> 
+            <li><a href="#">고객센터</a></li> 
+            <li><a href="#">설정</a></li> 
+        </ul> 
+    </nav> 
+    
+<!-- 본문 영역 --> 
+    <section id="main-section">  
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/squid_game.jpg" /></a> 
+            </div> 
+            <p class="paper-description"><b>오징어 게임</b></p> 
+            <div class="paper-content">
+                <p class="paper-text">456억 원의 상금이 걸린 의문의 서바이벌에 참가한 사람들이 최후의 승자가 되기 위해 목숨을 걸고 극한의 게임에 도전하는 이야기를 담은 넷플릭스 시리즈</p> 
+            </div> 
+        </div> 
+        
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/lacasadepapel.jpg" /></a> 
+            </div> 
+            <p class="paper-description"><b>종이의 집</b></p> 
+            <div class="paper-content"> 
+                <p class="paper-text">천재 교수와 범죄 전문가들이 벌이는 상상 초월의 인질극을 담은 넷플릭스 오리지널 시리즈</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/dp.jpg" /></a> 
+            </div> 
+            <p class="paper-description"><b>D.P.</b></p>
+            <div class="paper-content">
+                <p class="paper-text">탈영병들을 잡는 군무 이탈 체포조(D.P.) 준호와 호열이 다양한 사연을 가진 이들을 쫓으며 미처 알지 못했던 현실을 마주하는 이야기</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/strangerumor.jpg" /></a> 
+            </div> 
+            <p class="paper-description"><b>경이로운 소문</b></p> 
+            <div class="paper-content">
+                <p class="paper-text">악귀 사냥꾼 '카운터'들이 국숫집 직원으로 위장해 지상의 악귀들을 물리치는 통쾌하고 땀내 나는 악귀타파 히어로물</p> 
+            </div> 
+        </div> 
+        
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/kingdom.jpg" /></a> 
+            </div> 
+            <p class="paper-description"><b>킹덤</b></p> 
+            <div class="paper-content">
+                <p class="paper-text">죽었던 왕이 되살아나자 반역자로 몰린 왕세자가 향한 조선의 끝, 그곳에서 굶주림 끝에 괴물이 되어버린 이들의 비밀을 파헤치며 시작되는 미스터리 스릴러</p> 
+            </div> 
+        </div> 
+        
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/sweethome.png" /></a> 
+            </div> 
+            <p class="paper-description"><b>스위트홈</b></p> 
+            <div class="paper-content">
+                <p class="paper-text">은둔형 외톨이 고등학생 현수가 가족을 잃고 이사 간 아파트에서 겪는 기괴하고도 충격적인 이야기</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/arcane.jpg" /></a> 
+            </div> 
+            <p class="paper-description"><b>Arcane 아케인</b></p> 
+            <div class="paper-content"> 
+                <p class="paper-text">지상 도시 필트오버와 그 아래의 지하 도시 자운. 극심하게 반목하는 두 쌍둥이 도시에서, 두 자매가 서로 반대편에 서서 싸우기에 이른다. 마법 기술과 신념의 충돌 속에서 전쟁이 시작된다.</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/myname.jpg" /></a> 
+            </div> 
+            <p class="paper-description"><b>마이네임</b></p> 
+            <div class="paper-content"> 
+                <p class="paper-text">아버지를 죽인 범인을 찾기 위해 조직에 들어간 ‘지우’가 새로운 이름으로 경찰에 잠입한 후 마주하는 냉혹한 진실과 복수를 그린 넷플릭스 시리즈</p> 
+            </div> 
+        </div>
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/doctor.jpg" /></a> 
+            </div> 
+            <p class="paper-description"><b>슬기로운 의사생활</b></p> 
+            <div class="paper-content">
+                <p class="paper-text">누군가는 태어나고 누군가는 삶을 끝내는, 인생의 축소판이라 불리는 병원에서 평범한 듯 특별한 하루하루를 살아가는 사람들과 눈빛만 봐도 알 수 있는 20년지기 친구들의 케미스토리를 담은 드라마</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="./images/humanclass.jpg" /></a> 
+            </div> 
+            <p class="paper-description"><b>인간수업</b></p> 
+            <div class="paper-content"> 
+                <p class="paper-text">돈을 벌기 위해 죄책감없이 범죄의 길을 선택한 고등학생들이 그로 인해 돌이킬 수 없이 혹독한 대가를 치르는 과정을 그린 넷플릭스 오리지널 시리즈</p> 
+            </div> 
+        </div> 
+    </section>
+     
+<!-- 라이트박스 --> 
+    <div id="darken-background"> 
+        <div id="lightbox"> 
+            <div class="user-information"> 
+                <div class="user-information-text">
+                    <h2>지금 가입하기</h2>
+                    <p>월 9,500원으로 다양한 영상들을 만나보세요!!</p>
+                </div> 
+            </div>
+            <hr class="lightbox-splitter" />
+            <img src="./images/logo_n.png" style="width: 600px; height: 250px;"/> 
+        </div> 
+    </div> 
+</body> 
+</html> 
