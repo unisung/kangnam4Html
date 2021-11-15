@@ -94,7 +94,48 @@ html{background: #f7f5f5;}
     <script src="./js/jquery.masonry.min.js"></script> 
     <script src="./js/jquery.imagesloaded.min.js"></script> 
     <script>
+//풀다운 메뉴
+$(document).ready(function(){
+	//풀다운 메뉴
+	$('.outer-menu').hover(function(){$(this).find('.inner-menu').css('display','block');},
+			               function(){$(this).find('.inner-menu').css('display','none');});
+   });
+   
+//페이지 구성
+$(document).ready(function(){
+	//이미지 로드 확인
+	$('#main-section').imagesLoaded(function(){
+		//jQuery Masonry 플러그인 적용
+		$('#main-section').masonry({itemSelector:'.paper', coulumnWidth:230, isAnimated:true});
+	});
+});
 
+//라이트박스
+$(document).ready(function(){
+	//사용자 정의 함수
+	function showLightBox(){
+		$('#darken-background').show();
+		$('#darken-background').css('top',$(window).scrollTop());
+		//스크롤을 못하게 처리
+		$('body').css('overflow','hidden');//overflow속성값 hidden으로 설정
+	}
+	//사용자 정의 함수
+	function hideLighBox(){
+		//라이트박스를 보이지 않게 합니다.
+		$('#darken-background').hide();
+		//스크롤롤을 하게 합니다.
+		$('body').css('overflow','');//overflow속성값 지우기
+	}
+	
+	//라이트박스 제거 이벤트
+	$('#darken-background').click(function(){hideLighBox();});
+	
+	//클릭 이벤트 연결
+	$('.paper').click(function(){showLightBox();});
+	
+	//라이트박스 제거 이벤트 보조-이벤트 버블링 방지
+	$('#lightbox').click(function(event){event.stopPropagation()});
+});
     </script> 
 </head>
 <body>
