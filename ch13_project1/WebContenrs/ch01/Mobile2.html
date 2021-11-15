@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script src="http://code.jquery.com/jquery-3.4.1.js">
+	$(document).ready(function(){
+		$('.content_main_menu_outer').hover(function(){
+			$(this).find('.content_main_menu_inner').show();
+		},function(){
+			$(this).find('.content_main_menu_inner').hide();
+		});
+	});
+</script>
+
+<!-- 초기화 -->
+<link rel="stylesheet" href="./css/format.css">
+
+<!-- header -->
+<link rel="stylesheet" href="./css/header.css">
+
+<!-- main_content -->
+<style>
+.video {
+	width: 100%;
+}
+
+.content_main_menu {
+	position: absolute;
+	width: 100%;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: grid;
+	grid-template-columns: 150px 150px 150px 150px 150px 1fr 200px;
+}
+
+.content_main_menu_list {
+	text-align: center;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.content_main_menu button {
+	margin-top: 10px;
+	height: 50px;
+}
+
+.content_main_menu div {
+	padding-top: 20px;
+}
+
+.content_video {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.content_main img {
+	position: absolute;
+	top: 20%;
+	left: 35%;
+	border-radius: 300px;
+}
+.content_main_menu_outer{
+	position:relative;
+}
+.content_main_menu_outer:hover>.content_main_menu_inner_item{
+	display:block;
+}
+.content_main_menu_inner{
+	display:none;
+	position:absolute;
+	z-index: 1000;
+	top: 40px;
+	left: 0;
+	width: 100%;
+}
+</style>
+
+<!-- content -->
+<style>
+.content {
+	padding-top: 50px;
+	margin: 0 30px;
+}
+
+.content_head_container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 100px auto;
+	gap: 10px;
+}
+
+.content_head_container h2 {
+	margin: 0 auto;
+}
+
+.content_image img {
+	width: auto;
+	height: 500px;
+	object-fit: cover;
+}
+</style>
+
+<!-- footer -->
+<style>
+.footer {
+	padding-top: 40px;
+}
+
+.footer-container {
+	background-color: black;
+	color: white;
+	font-size: 13px;
+	text-align: center;
+	line-height: 20px;
+}
+</style>
+<body>
+	<div class="header">
+		<a href="">
+			<img src="./image/logo.png" class="logo">
+		</a>
+		<div class="header_menu">
+			<a href="">PC게임</a>
+		</div>
+		<div class="header_menu">
+			<a href="">모바일게임</a>
+		</div>
+		<div class="header_menu">
+			<a href="">인디게임</a>
+		</div>
+		<div class="header_menu"></div>
+		<div class="header_menu">
+			<a href="">로그인</a>
+		</div>
+	</div>
+	<div class="content_main">
+		<div class="content_video">
+			<video class="video" autoplay loop muted style="background: #110b0b">
+				<source src="https://cdn-lostark.game.onstove.com/2018/obt/assets/images/pc/main/main_3year.mp4?v=1timestamp" type="video/mp4">
+			</video>
+			<img src="./image/content_img.jpg">
+		</div>
+		<div class="content_main_menu">
+			<ul class="content_main_menu_list">
+				<li class="content_main_menu_outer">
+					새소식
+					<ul class="content_main_menu_inner">
+						<li class="content_main_menu_inner_item">공지사항</li>
+						<li class="content_main_menu_inner_item">업데이트</li>
+						<li class="content_main_menu_inner_item">이벤트</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="content_main_menu_list">
+				<li class="content_main_menu_outer">
+					게임정보
+					<ul class="content_main_menu_inner">
+						게임정보
+						<li class="content_main_menu_inner_item">전투정보실</li>
+						<li class="content_main_menu_inner_item">세계관</li>
+						<li class="content_main_menu_inner_item">클래스</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="content_main_menu_list">
+				<li class="content_main_menu_outer">
+					커뮤니티
+					<ul class="content_main_menu_inner">
+						커뮤니티
+						<li class="content_main_menu_inner_item">자유</li>
+						<li class="content_main_menu_inner_item">직업</li>
+						<li class="content_main_menu_inner_item">공략</li>
+						<li class="content_main_menu_inner_item">Q&A</li>
+						<li class="content_main_menu_inner_item">갤러리</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="content_main_menu_list">
+				<li class="content_main_menu_outer">
+					미디어
+					<ul class="content_main_menu_inner">
+						미디어
+						<li class="content_main_menu_inner_item">공모전</li>
+						<li class="content_main_menu_inner_item">OST</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="content_main_menu_list">
+				<li class="content_main_menu_outer">
+					고객센터
+					<ul class="content_main_menu_inner">
+						고객센터
+						<li class="content_main_menu_inner_item">FAQ</li>
+						<li class="content_main_menu_inner_item">신고센터</li>
+						<li class="content_main_menu_inner_item">보안서비스</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="content_main_menu_list"></div>
+			<button>Game Start</button>
+
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="content_head_container">
+			<h2>업데이트</h2>
+			<h2>핵심가이드</h2>
+			<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec ipsum non magna fermentum consequat. Morbi viverra erat vitae fringilla faucibus. Duis fringilla eros eu enim auctor euismod. Ut ut posuere felis, a imperdiet nunc. Nam ac rutrum turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin convallis egestas consequat. Cras consectetur ex quis nibh pulvinar vulputate. Ut quis lobortis neque. Nullam quis tristique orci. Curabitur eu sem pellentesque, pretium nisi at, facilisis mi. Integer id est a dui imperdiet congue at ut elit.</div>
+			<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec ipsum non magna fermentum consequat. Morbi viverra erat vitae fringilla faucibus. Duis fringilla eros eu enim auctor euismod. Ut ut posuere felis, a imperdiet nunc. Nam ac rutrum turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin convallis egestas consequat. Cras consectetur ex quis nibh pulvinar vulputate. Ut quis lobortis neque. Nullam quis tristique orci. Curabitur eu sem pellentesque, pretium nisi at, facilisis mi. Integer id est a dui imperdiet congue at ut elit.</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<footer class="footer-container">
+			<pre>회사명 ㈜스마일게이트 알피지 대표이사 지원길 사업자등록번호 220-88-29249 통신판매업 신고번호 제2017-성남분당-0904호 
+			E lostark@smilegate.com F 031-627-0400© Smilegate RPG & Smilegate Stove All rights reserved.</pre>
+		</footer>
+	</div>
+</body>
+</html>
