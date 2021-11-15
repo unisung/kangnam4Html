@@ -1,0 +1,582 @@
+<!DOCTYPE html><html><head>
+<link rel="shortcut icon" href="#">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <!-- 초기화 --> 
+    <style> 
+	*{
+		margin: 0; padding: 0;
+		font-family: 'Malgun Gotic', sans-serif;
+	}
+	
+	a { text-decoration: none;}
+	img { border: 0;}
+	li {list-style: none;}
+	html { background: #ffffff;}
+    </style> 
+    <!-- 헤더 --> 
+    <style> 
+	#main-header{
+		height: 100px;
+		background: faf7f7;
+		position: relative;
+	}
+	
+	.header-search-form{
+		float: right;
+	}
+	
+	.header-title{
+		position: absolute;
+		width: 400px; height: 90px;
+		left: 50%; margin-left: -170px;
+		background: url('./images/mypage_logo.png');
+		background-repeat: no-repeat;
+	}
+	
+	.header-menu{
+		float:left;
+	}
+    </style> 
+    <!-- 드롭다운 --> 
+    <style> 
+		.outer-menu{
+			 float: left;
+            width: 100px; height: 20px;
+            line-height: 20px;
+            padding: 10px 0;
+            position: relative;
+            text-align: center;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            z-index: 9999;
+		}
+		
+		.outer-menu:hover { background: #e1dfdf;}
+		
+		 .inner-menu {
+            display: none;
+            background: #FFFFFF;
+            margin-top: 10px;
+            width: 100%;
+
+            border-top: 1px solid #cccaca;
+            box-shadow: 0 2px 4px rgba(34,25,25,0.5);
+        }
+		
+		.inner-menu a{
+			 display: block;
+            padding: 5px 10px;
+            z-index: 5000;
+		}
+		
+		.inner-menu a:hover { background: #E1DFDF; }
+    </style> 
+    <!-- 네비게이션 메뉴 --> 
+    <style> 
+        #main-navigation {
+            height: 30px;
+            background: #faf7f7;
+            border-top: 1px solid #cfcaca;
+            box-shadow: 1px 3px 3px rgba(34, 25, 25, 0.4);
+        }
+
+        #main-navigation > ul {
+            overflow:hidden;
+            text-align: center;
+        }
+
+        #main-navigation > ul > li {
+            display: inline;
+
+            padding: 0 5px;
+
+            line-height: 30px;
+            font-size: 13px;
+            color: #524D4D;
+            text-shadow: 0 1px 1px white;
+        }
+
+        #main-navigation > ul > li:hover { 
+            background: #E1DFDF;
+            border-radius: 2px;
+        }	
+    </style> 
+    <!-- 검색 양식 --> 
+    <style> 
+	 .header-search-form {
+            height: 26px;
+            padding: 7px;
+        }
+     .input-search {
+            display: block;
+            float: left;
+
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+            border-radius: 15px 0 0 15px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+            width: 120px; height: 24px;
+            padding: 0 0 0 10px;
+            font-size: 12px;
+            color: #555555;
+        }
+      .input-search:focus {
+            border-color: rgba(82, 168, 236, 0.8);
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+    </style> 
+    <!-- 종이 스타일 --> 
+    <style> 
+        .paper {
+            width: 250px;
+            margin-left: 100px;
+            margin-top: 10px;
+            padding: 10px 10px 0;
+            font-size: 11px;
+            background: #FFFFFF;
+            box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+        }
+
+        .paper-content {
+            margin: 0 -15px;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #F2F0F0;
+
+            overflow: hidden;
+        }
+
+        .paper-description {
+            margin: 10px 0;
+        }
+
+        .paper-text {
+            float: left;
+            width: 150px;
+            margin-left: 10px;
+        }
+    </style> 
+    <!-- 섹션 --> 
+    <style> 
+	 /* 미디어 쿼리를 지원하지 않는 웹 브라우저 */
+        #main-section {
+            width: 920px;
+            margin: 0 auto;
+        }
+
+        /* 3줄 */
+        @media (max-width: 919px) {
+            #main-section { width: 690px; }
+        } 
+
+        /* 4줄 */
+        @media (min-width: 920px) and (max-width:1149px) {
+            #main-section { width: 920px; }
+        } 
+
+        /* 5줄 */
+        @media (min-width:1150px) and (max-width:1379px) {
+            #main-section { width: 1150px; }
+        }
+
+        /* 6줄 */
+        @media (min-width:1380px) {
+            #main-section { width: 1380px; }
+        }
+    </style> 
+    <!-- 라이트박스 --> 
+    <style> 
+	  #darken-background {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 100%; 
+
+            display: none;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            overflow-y: scroll;
+        }
+
+        #lightbox {
+            width: 700px;
+            margin: 20px auto; padding: 15px;
+
+            border: 1px solid #333333;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 5px 5px rgba(34, 25, 25, 0.4);
+
+            text-align: center;
+        }
+
+        .user-information {  overflow: hidden;  text-align: left; }
+        .user-information-image { float: left; width: 70px; }
+        .user-information-text { float: right; width: 620px;  }
+        .lightbox-splitter { margin: 10px 0; }
+    </style> 
+    
+    <!-- 슬라이드 -->
+    <style>
+        div.item:nth-child(1) 
+        div.item:nth-child(2)
+        div.item:nth-child(3)
+    </style>
+    <style>
+    	.slide{ 
+    		display: block;
+ 			margin-top: 50px;
+ 			margin-left: 230px;
+ 	   	}
+    </style>
+    
+    <!-- 버튼 -->
+    <style>
+    	.button{
+    		display: block;
+    		margin-left:700px;
+    		margin-bottom:50px;
+    	}
+    </style>
+    
+    <!-- image_1 -->
+    <style>
+    	#image_1{
+    		margin-left: 240px;
+    		margin-top:20px;
+    		margin-bottom:20px;
+    	}
+    </style>
+    
+    <!-- footer -->
+    <style>
+    	.footer{
+    		border-top:1px solid #cccaca;
+    		text-align: center;
+    		font-size: 13px;
+    	}
+    </style>
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script> 
+   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+
+    <script>
+    // 풀다운 메뉴
+    $(document).ready(function () {
+        // 풀다운 메뉴
+        $('.outer-menu').hover(function () {
+            $(this).find('.inner-menu').css('display', 'block');
+        }, function () {
+            $(this).find('.inner-menu').css('display', 'none');
+        });
+    });
+
+    // 페이지
+    $(document).ready(function () {
+        // 이미지 로드 확인
+        $('#main-section').imagesLoaded(function () {
+            // jQuery Masonry 플러그인 적용
+            $('#main-section').masonry({
+                itemSelector: '.paper',
+                columnWidth: 230,
+                isAnimated: true
+            });
+        });
+});
+      
+    
+    // 라이트 박스
+    $(document).ready(function () {
+        function showLightBox() {
+            // 라이트박스를 보이게 합니다.
+            $('#darken-background').show();
+            $('#darken-background').css('top', $(window).scrollTop());
+            // 스크롤을 못하게 합니다.
+            $('body').css('overflow', 'hidden');
+        }
+
+        function hideLightBox() {
+            // 라이트박스를 안 보이게 합니다.
+            $('#darken-background').hide();
+
+            // 스크롤을 하게 합니다.
+            $('body').css('overflow', '');
+        }
+
+        // 라이트박스 제거 이벤트
+        $('#darken-background').click(function () {
+            hideLightBox();
+        });
+
+          // 클릭 이벤트 연결
+        $('.paper').click(function () {
+            showLightBox();
+        });
+
+        // 라이트박스 제거 이벤트 보조
+        $('#lightbox').click(function (event) {
+            event.stopPropagation()
+        });        
+    });
+    
+    // 슬라이드
+       $(document).ready(function () {
+            // 변수를 선언합니다.
+            var width = $('[data-role="slider"]').attr('data-width');
+            var height = $('[data-role="slider"]').attr('data-height');
+            var count = $('[data-role="slider"] div.item').length;
+            
+            // 스타일을 적용합니다.
+            $('[data-role="slider"]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position: 'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+            // 변수를 선언합니다.
+            var currentPage = 0;
+            var changePage = function () {
+                $('[data-role="slider"] > .container').animate({
+                    left: -currentPage * width
+                }, 500);
+            };
+            // 이벤트를 연결합니다.
+            $('#left-button').click(function () {
+                if (currentPage > 0) {
+                    // 왼쪽으로 이동
+                    currentPage = currentPage - 1;
+                    changePage();
+                }
+            });
+            $('#right-button').click(function () {
+                if (currentPage < count - 1) {
+                    // 오른쪽으로 이동
+                    currentPage = currentPage + 1;
+                    changePage();
+                }
+            });
+        });
+    </script> 
+    
+</head>
+<body>
+ <!-- 헤더 --> 
+    <header id="main-header"> 
+        <div class="header-search-form"> 
+            <form> 
+                <input type="search" class="input-search" /> 
+                <input type="submit" class="input-search-submit" value="검색" /> 
+            </form> 
+        </div> 
+        <h1 class="header-title"></h1> 
+        <div class="header-menu"> 
+            <ul class="outer-menu"> 
+                <li> 
+                    <a href="#">베스트 100</a> 
+                    <ul class="inner-menu"> 
+                        <li><a href="#">유아동/미용/패션잡화</a></li> 
+                        <li><a href="#">가전/레저/식품</a></li> 
+                        <li><a href="#">수납/정리</a></li> 
+                        <li><a href="#">주방/욕실/청소</a></li> 
+                        <li><a href="#">가구인테리어</a></li> 
+                        <li><a href="#">사무/문구/디지털</a></li> 
+                    </ul> 
+                </li> 
+            </ul> 
+            <ul class="outer-menu"> 
+                <li> 
+                    <a href="#">기획전</a> 
+                    <ul class="inner-menu"> 
+                        <li><a href="#">수납/정리</a></li> 
+                        <li><a href="#">주방/욕실/청소</a></li> 
+                        <li><a href="#">가구인테리어</a></li> 
+                        <li><a href="#">사무/문구/디지털</a></li> 
+                    </ul> 
+                </li> 
+            </ul>
+                        <ul class="outer-menu"> 
+                <li> 
+                    <a href="#">이벤트</a> 
+                    <ul class="inner-menu"> 
+                        <li><a href="#">APP 첫 설치 이벤트</a></li> 
+                        <li><a href="#">다이소몰 11월 카드혜택</a></li> 
+                        <li><a href="#">결제정보보호 이벤트</a></li> 
+                        <li><a href="#">자동차보험 가입 이벤트</a></li> 
+                    </ul> 
+                </li> 
+            </ul> 
+        </div> 
+    </header> 
+    <!-- 네비게이션 메뉴 --> 
+    <nav id="main-navigation"> 
+        <ul> 
+            <li><a href="#">수납/정리</a></li> 
+            <li><a href="#">주방/욕실/청소</a></li> 
+            <li><a href="#">가구/인테리어</a></li> 
+            <li><a href="#">사무/문구/디지털</a></li> 
+            <li><a href="#">가전/레저/식품</a></li> 
+            <li><a href="#">유아동/미용/패션잡화</a></li>
+        </ul> 
+    </nav> 
+	<!-- 슬라이드 영역 -->
+	<section>
+	    <div class="slide">
+          <div data-role="slider" data-width="1100" data-height="340">
+        <div class="container">
+            <div class="item">
+            	<a href="https://www.daisomall.co.kr/event/goods_event.php?event_ix=13019"><img src="https://image.daisomall.co.kr/data/daiso_data/images/banner/1342/01_10_mainbig_20211108.jpg"></a>
+            </div>
+            <div class="item">
+            	<a href="https://www.daisomall.co.kr/event/goods_event.php?event_ix=13062"><img src="https://image.daisomall.co.kr/data/daiso_data/images/banner/1342/01_08_mainbig_20211108.jpg"></a>
+            </div>
+            <div class="item">
+      			<a href="https://www.daisomall.co.kr/event/goods_event.php?event_ix=12149"><img src="https://image.daisomall.co.kr/data/daiso_data/images/banner/1343/01_15_mainbig_20211108.jpg"></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="button">
+    <button id="left-button">←</button>
+    <button id="right-button">→</button>
+    </div>        		
+	</section>
+
+    <!-- 본문 영역 --> 
+    <h2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;오늘의 추천 딜!</h2>
+    <section id="main-section">
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="https://image2.daisomall.co.kr/data/daiso_data/images/product/00/04/68/17/39/m_0004681739.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">수능합격기원 찹쌀떡 1.8kg(60gx30개)</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="https://image2.daisomall.co.kr/data/daiso_data/images/product/00/04/67/63/58/m_0004676358.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">카카오프렌즈 헬로투데이 2022 캘린더</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="https://image2.daisomall.co.kr/data/daiso_data/images/product/00/04/69/66/89/m_0004696689.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">겨울이돌아왔다! 핫팩 손난로 핫패드 보온대 10팩 모음전</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="https://image2.daisomall.co.kr/data/daiso_data/images/product/00/01/52/49/67/m_0001524967.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">네츄럴오가닉 아기물티슈 오리지널플레인리필100매x30</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="https://image2.daisomall.co.kr/data/daiso_data/images/product/00/04/23/24/55/m_0004232455.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">넥워머 / 유아목도리</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="https://image2.daisomall.co.kr/data/daiso_data/images/product/00/04/69/21/44/m_0004692144.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">[키스미] BEST 아이템 6,900원 균일가 행사~</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="https://image2.daisomall.co.kr/data/daiso_data/images/product/00/01/39/52/97/m_0001395297.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">[일월]2022년형 온돌마루 전기카페트매트 대형183x250</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="http://image2.daisomall.co.kr/data/daiso_data/images/product/00/04/70/59/02/m_0004705902.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">[코렐]블랙세일 럭키 랜덤박스 11종 균일가!</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="http://image2.daisomall.co.kr/data/daiso_data/images/product/00/04/70/00/20/m_0004700020.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">가볍고 따뜻한 남녀 경량 패딩조끼</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="http://image2.daisomall.co.kr/data/daiso_data/images/product/00/04/45/29/02/m_0004452902.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">[홈어롱] 인기상품 13종 클리어런스 균일가!</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="https://image2.daisomall.co.kr/data/daiso_data/images/product/00/01/32/25/07/m_0001322507.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">[딜]헤머 트윈벨 무소음 알람시계 27종(AA건전지증정)</p> 
+            </div> 
+    </div>
+    <div class="paper"> 
+    	<div class="paper-holder">
+    		<a><img width="250" src="https://image2.daisomall.co.kr/data/daiso_data/images/product/00/03/07/22/84/m_0003072284.gif"></a>
+    	</div>
+    	<div class="paper-content"> 
+                <p class="paper-text">[실리쿡] 냉장고,주방정리 베스트 모음/무료배송</p> 
+            </div> 
+    </div>
+    </section>
+    <section id="image_1">
+    <div>
+    
+    	<a href="https://www.daisomall.co.kr/event/goods_event.php?event_ix=13068"><img src="https://image.daisomall.co.kr/data/daiso_data/images/banner/1057/05_04_20211108.jpg"></a>
+    </div>
+    </section> 
+    <!-- 라이트박스 --> 
+    <div id="darken-background"> 
+        <div id="lightbox"> 
+            <div class="user-information"> 
+                <a class="user-information-image" href="#">
+                    <img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/common/footer_logo.png">
+                </a> 
+                <div class="user-information-text">
+                    <br><br><h3>이 제품은 오늘의 핫딜 제품입니다.</h3>
+                </div> 
+            </div>
+            <hr class="lightbox-splitter">
+            <img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/korea/common/low_daiso_logo2.png"> 
+        </div> 
+    </div>
+    <footer class="footer"><br>(주)한웰이쇼핑 l 대표이사 : 이호성 l 사업장소재지: 서울특별시 강남구 양재천로 167 아성빌딩 5F.<br>
+사업자등록번호 : 220-87-69701 | 통신판매업신고 : 2008-서울강남-1823 | 의료기기 판매업 신고번호 : 제 5664호<br>
+개인정보보호책임자 : 이상구 | 호스팅제공자 : (주)한웰이쇼핑<br>
+고객센터 : 1688-5700 l 팩스 : 02.573.8513 | Mail : help@daisomall.co.kr ㅣ 사업자정보확인<br></footer>
+</body>
+</html>

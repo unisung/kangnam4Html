@@ -1,0 +1,493 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8">
+    <title>HTML5 with Hanbit</title> 
+    <!-- 초기화 -->
+    <style>
+        * {
+            margin: 0; padding: 0;
+            font-family: 'Malgun Gotic', sans-serif;
+        }
+
+		.menu {color : white;
+		font-size: 20px;
+		}
+
+        a { text-decoration: none; 
+        font-size: 25px;
+        color: white;
+        font-family :  'font2'; }
+       
+        img { border: 0; }
+        li { list-style: none; }
+        html { background: #f7f5f5; }
+    </style>
+    <!-- 헤더 -->
+    <style>
+      #main-header {  /*상단 문소리배너*/
+            height: 380px;
+            background-size:2500px;
+            background-image:url('./images/LittleForest-BackTop.png');
+            background-repeat : repeat;
+
+            position: relative;
+        }
+        .header-search-form {  /* 검색창 */
+            float: right;
+        }
+
+        .header-title {   /* 배너 대문 글씨 */
+            position: absolute;
+            width: 1000px; height:  40px;
+            left: 60%; margin-left: -100px;
+            color : white;
+            font-size : 220px;
+            background-repeat: no-repeat;
+            top :  100px;
+            /* font-family :  fantasy; */
+            font-family :  'neon'; 
+            
+            
+        }
+        
+       		 @font-face {
+    		font-family: 'font2';
+    		src: url('./images/Stay Classy SLDT.ttf') format('truetype');
+			}
+			
+            @font-face {
+    		font-family: 'neon';
+    		src: url('./images/Reading Regular.ttf') format('truetype');
+			}
+        
+   		  .header-title2 {   /* 배너 대문 글씨 */
+            position: absolute;
+            width: 1000px; height:  40px;
+            left: 56%; margin-left: -5px;
+            color : white;
+            font-size : 20px;
+            background-repeat: no-repeat;
+            top :  300px;
+            font-family :  fantasy;
+        }
+        
+
+       .header-menu {
+            float: right;
+        } 
+    </style>
+    <!-- 드롭다운 -->
+    <style>
+        .outer-menu {
+            float: left;
+            width: 160px; height: 20px;
+            line-height: 20px;
+            padding: 10px 0;
+            position: relative;
+            text-align: center;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            z-index: 9999;
+        }
+
+        .outer-menu:hover { background: black; } /* 메뉴에 마우스 올렸을때. */
+
+        .inner-menu {
+            display: none;
+            background: #FFFFFF;
+            margin-top: 10px;
+            width: 100%;
+
+  /*           border-top: 1px solid #cccaca;
+            box-shadow: 0 2px 4px rgba(34,25,25,0.5); */
+        }
+
+        .inner-menu a {
+            display: block;
+            padding: 5px 10px;
+            z-index: 5000;
+        }
+
+        .inner-menu a:hover { background: #E1DFDF; }
+    </style>
+    <!-- 네비게이션 메뉴 -->
+    <style>  
+        #main-navigation { /* 메뉴바에 대한 설정  */
+            height: 30px;
+            background: #373435;
+            border-top: 1px solid #cfcaca;
+            box-shadow: 1px 1px 1px rgba(34, 25, 25, 0.4);
+        }
+
+        #main-navigation > ul {
+            overflow:hidden;
+            text-align: center;
+        }
+
+        #main-navigation > ul > li { /* 메뉴바 */
+            display: inline;
+			font-family :  'Stay Classy SLDT'; 
+            padding: 0 5px;
+			margin-left:200px;
+            line-height: 30px;
+            
+            color: #FFFFFF;
+            text-shadow: 0 1px 1px white;
+        }
+
+        #main-navigation > ul > li:hover {  /*메뉴바에 마우스 올렸을때, */
+            background: gray;
+            border-radius: 2px;
+        }
+    </style>
+    <!-- 검색 양식 -->
+    <style>
+        .header-search-form {
+            height: 50px;
+            padding: 7px;
+        }
+
+        .input-search {
+            display: block;
+            float: left;
+
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+            border-radius: 15px 0 0 15px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+            width: 120px; height: 26px;
+            padding: 0 0 0 10px;
+            font-size: 12px;
+            color: #555555;
+        }
+
+        .input-search:focus {
+            border-color: rgba(82, 168, 236, 0.8);
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .input-search-submit {
+            display: block;
+            float: left;
+
+            width: 50px; height: 26px;
+            border-radius: 0 15px 15px 0;
+            border: 1px solid #CCCCCC;
+
+            margin-left: -1px;
+
+            vertical-align: top;
+            display: inline-block;
+        }
+
+    </style>
+    <!-- 종이 스타일 -->
+    <style>
+        .paper {
+            width: 400px;
+            margin-top: 10px;
+            padding: 15px 15px 0;
+            font-size: 18px;
+            background: #FFFFFF;
+            box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+        }
+
+        .paper-content {
+            margin: 0 -5px;
+            margin-top: 10px;
+            padding: 5px 5px;
+            background: #F2F0F0;
+
+            overflow: hidden;
+        }
+
+        .paper-description {
+            margin: 10px 0;
+        }
+
+        .paper-link {
+            display: block;
+            float: left;
+        }
+
+        .paper-text {
+            float: left;
+            width: 380px;
+            margin-left: 10px;
+        }
+    </style>
+    <!-- 섹션 -->
+    <style>
+        /* 미디어 쿼리를 지원하지 않는 웹 브라우저 */
+        #main-section {
+            width: 920px;
+            margin: 0 auto;
+        }
+
+        /* 3줄 */
+        @media (max-width: 919px) {
+            #main-section { width: 690px; }
+        } 
+
+        /* 4줄 */
+        @media (min-width: 920px) and (max-width:1149px) {
+            #main-section { width: 920px; }
+        } 
+
+        /* 5줄 */
+        @media (min-width:1150px) and (max-width:1379px) {
+            #main-section { width: 1150px; }
+        }
+
+        /* 6줄 */
+        @media (min-width:1380px) {
+            #main-section { width: 1380px; }
+        }
+    </style>
+    <!-- 라이트박스 -->
+    <style>
+        #darken-background {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 100%; 
+
+            display: none;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            overflow-y: scroll;
+        }
+
+        #lightbox {
+            width: 700px;
+            margin: 20px auto; padding: 15px;
+
+            border: 1px solid #333333;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 5px 5px rgba(34, 25, 25, 0.4);
+
+            text-align: center;
+        }
+
+        .user-information {  overflow: hidden;  text-align: left; }
+        .user-information-image { float: left; width: 70px; }
+        .user-information-text { float: right; width: 620px;  }
+        .lightbox-splitter { margin: 10px 0; }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+
+    <script>
+        // 풀다운 메뉴
+        $(document).ready(function () {
+            // 풀다운 메뉴
+            $('.outer-menu').hover(function () {
+                $(this).find('.inner-menu').css('display', 'block');
+            }, function () {
+                $(this).find('.inner-menu').css('display', 'none');
+            });
+        });
+
+        // 페이지
+        $(document).ready(function () {
+            // 이미지 로드 확인
+            $('#main-section').imagesLoaded(function () {
+                // jQuery Masonry 플러그인 적용
+                $('#main-section').masonry({
+                    itemSelector: '.paper',
+                    columnWidth: 600,
+                    isAnimated: true
+                });
+            });
+});
+          
+        
+        // 라이트 박스
+        $(document).ready(function () {
+            function showLightBox() {
+                // 라이트박스를 보이게 합니다.
+                $('#darken-background').show();
+                $('#darken-background').css('top', $(window).scrollTop());
+                // 스크롤을 못하게 합니다.
+                $('body').css('overflow', 'hidden');
+            }
+
+            function hideLightBox() {
+                // 라이트박스를 안 보이게 합니다.
+                $('#darken-background').hide();
+
+                // 스크롤을 하게 합니다.
+                $('body').css('overflow', '');
+            }
+
+            // 라이트박스 제거 이벤트
+            $('#darken-background').click(function () {
+                hideLightBox();
+            });
+
+              // 클릭 이벤트 연결
+            $('.paper').click(function () {
+                showLightBox();
+            });
+
+            // 라이트박스 제거 이벤트 보조
+            $('#lightbox').click(function (event) {
+                event.stopPropagation()
+            });
+        });
+    </script>
+</head> 
+<body> 
+    <!-- 헤더 --> 
+    <header id="main-header"> 
+        <div class="header-search-form"> 
+            <form> 
+                <input type="search" class="input-search" /> 
+                <input type="submit" class="input-search-submit" value="검색" /> 
+            </form> 
+        </div> 
+        <h1 class="header-title">Little Forest</h1> 
+        <h5 class="header-title2">“잠시 쉬어가도, 달라도, 평범해도 괜찮아! 모든 것이 괜찮은 청춘들의 아주 특별한 사계절 이야기”</h5> 
+        <div class="header-menu"> 
+        
+            <ul class="outer-menu"> 
+                <li> 
+                    <a class ="menu" href="#">메뉴</a> 
+                    <ul class="inner-menu"> 
+                        <li><a href="#">레시피 공유방</a></li> 
+                        <li><a href="#">혜원의 일기</a></li> 
+                        <li><a href="#">자유게시판</a></li> 
+                    </ul> 
+                </li> 
+            </ul> 
+            
+            
+        </div> 
+    </header> 
+    <!-- 네비게이션 메뉴 --> 
+    <nav id="main-navigation"> 
+        <ul> 
+            <li><a href="#">Spring</a></li> 
+            <li><a href="#">Summer</a></li> 
+            <li><a href="#">Fall</a></li> 
+            <li><a href="#">Winter</a></li> 
+        </ul> 
+    </nav> 
+    <!-- 본문 영역 --> 
+    <section id="main-section"> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img src="./images/springFood-1.jpeg" alt="봄파스타" width="400"/></a> 
+            </div> 
+            <p class="paper-description">봄 향기 물씬 꽃잎 파스타</p> 
+            <div class="paper-content"> 
+                <p class="paper-text">파스타 면을 물에 삶고 크림 소스를 붓고 볶다가 꽃잎 얹어서 먹으면 맛있을까...</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img src="./images/springFood-2.jpeg" alt="아카시아튀김" width="400"/></a> 
+            </div> 
+            <p class="paper-description">아카시아튀김</p> 
+            <div class="paper-content"> 
+                <p class="paper-text">향긋한 아카시아 내음이 가득 차는 봄, 풍성히 피어 있는 아카시아의 잎 중 하나를 뜯어 기름에 담궈 먹는다.</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img src="./images/springFood-3.jpeg" alt="어니언그라탕" width="400"/></a> 
+            </div> 
+            <p class="paper-description">어니언그라탕</p> 
+            <div class="paper-content"> 
+                <p class="paper-text">무슨 맛일지 나도 궁금하다. 먹고싶다.</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img src="./images/summerFood-1.jpeg" alt="오이콩국수" width="400"/></a> 
+            </div> 
+            <p class="paper-description">오이콩국수</p> 
+            <div class="paper-content"> 
+                <p class="paper-text">더운 여름 샤워 후에 맛보는 오이 콩국수의 맛.</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img src="./images/fallFood-1.jpeg" alt="곶감" width="400" /></a> 
+            </div> 
+            <p class="paper-description">감</p> 
+            <div class="paper-content"> 
+                <p class="paper-text">가을에 손질해둔 감이 잘 익기만을 기다리면 깊은 겨울의 맛을 볼 수 있다고 한다.</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img src="./images/fallFood-2.jpeg" alt="밤조림" width="400" /></a> 
+            </div> 
+            <p class="paper-description">롸자드 비떵 크렘브렐레</p> 
+            <div class="paper-content"> 
+                <p class="paper-text">엄마는 마법사 같다. 내 기분을 단숨에 바꿀 수 있는 마법사.</p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img src="./images/winterFood-1.jpeg" alt="시루떡" width="400" /></a> 
+            </div> 
+            <p class="paper-description">수제비와 배추전</p> 
+            <div class="paper-content"> 
+                <p class="paper-text">날이 추우면 수제비가 먹고 싶어진다. 반죽을 해서 2시간 정도 재워놔야 하기 때문에, 눈을 치울 때 딱 알맞다. </p> 
+            </div> 
+        </div> 
+         
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img src="./images/winterFood-2.jpeg" alt="어니언그라탕" width="400" /></a> 
+            </div> 
+            <p class="paper-description">시루떡</p> 
+            <div class="paper-content"> 
+                <p class="paper-text">어떻게 이렇게 뚝딱 떡이 만들어지냐. (참,개발자들은 뚝딱이란 말을 싫어하는데.)</p> 
+            </div> 
+        </div> 
+        
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img src="./images/winterFood-3.jpeg" alt="밤조림" width="400" /></a> 
+            </div> 
+            <p class="paper-description">밤조림</p> 
+            <div class="paper-content"> 
+                <p class="paper-text">단 밤에, 단 맛을 더해 보관한다. 다 먹어버리지 못하게, 생각날 때만 꺼내먹을 수 있게.</p> 
+            </div> 
+        </div> 
+         
+    </section> 
+    <!-- 라이트박스 --> 
+    <div id="darken-background"> 
+        <div id="lightbox"> 
+            <div class="user-information"> 
+                <a class="user-information-image" href="#">
+                    <img src="./images/59.png" width="70"/>
+                </a> 
+                <div class="user-information-text">
+                    <h3></h3>
+                    <p>나도, 나만의 작은 숲을 만들어야겠다.</p>
+                </div> 
+            </div>
+            <hr class="lightbox-splitter" />
+            <img src="./images/poster.jpeg"  /> 
+        </div> 
+    </div> 
+</body> 
+</html> 
