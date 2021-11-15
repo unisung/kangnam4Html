@@ -2,12 +2,21 @@ package dto;
 
 public class KinnImage {
   String src;
+  String description;
   String paperLink;
   String paperText;
-public KinnImage(String src, String paperLink, String paperText) {
+
+public KinnImage(String src, String description, String paperLink, String paperText) {
 	this.src = src;
+	this.description = description;
 	this.paperLink = paperLink;
 	this.paperText = paperText;
+}
+public String getDescription() {
+	return description;
+}
+public void setDescription(String description) {
+	this.description = description;
 }
 public String getSrc() {
 	return src;
