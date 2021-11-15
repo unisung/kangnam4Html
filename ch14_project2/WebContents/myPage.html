@@ -132,11 +132,10 @@ $(document).ready(function(){
 	
 	//클릭 이벤트 연결
 	$('.paper').click(function(){showLightBox();
-	                 $('#lightbox').find('img').attr('src',function(){
-	        	   return $(this).find('img').attr('src');   
-	           });
+	              var $src = $(this).find('img').attr('src');
+	                 $('#lightbox').find('#img').attr('src',$src).css({width:600, height:750});});
 	        		               
-	});
+	
 	
 	//라이트박스 제거 이벤트 보조-이벤트 버블링 방지
 	$('#lightbox').click(function(event){event.stopPropagation()});
@@ -407,7 +406,7 @@ $(document).ready(function(){
                 </div>
             </div> 
             <hr class="lightbox-splitter">
-            <img src="http://placekitten.com/600/750" /> 
+            <img src="http://placekitten.com/600/750" id="img"/> 
         </div> 
     </div> 
 </body>
