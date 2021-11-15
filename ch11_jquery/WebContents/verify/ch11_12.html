@@ -1,0 +1,43 @@
+<!--  12 다음 빈칸을 채워서 화면을 클릭할 때 div.drawer-menu 태그가 위아래로 슬라이드되면서 보
+      이거나 보이지 않게 만드시오. 이를 활용하면 다양한 모바일 메뉴를 만들 수 있습니다.
+-->
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    * { margin: 0;  padding: 0; }
+    p { margin: 10px 0; }
+ .drawer{ position: fixed; width: 100%;  text-align: center; color: white;  background-color: red}
+.drawer h1 { height: 50px; line-height: 50px;}
+.drawer-menu { display: none;}
+.content { /* 글자가 양쪽에 붙지 않게 설정합니다. */
+           padding: 10px;
+           /* div.drawer에 의해 가려지지 않게 내립니다. */
+         padding-top: 60px;
+        }
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$(document).ready(function(){
+	$('body').click(function(){
+		$('.drawer-menu').slideToggle('slow');
+	});
+});
+</script>
+</head>
+<body>
+<div class="drawer">
+    <h1>Logo</h1>
+    <div class="drawer-menu">
+        <p>Esse pariatur</p>
+    </div>
+</div>
+<div class="content">
+    <h1>Lorem ipsum</h1>
+    <p>Magna et excepteur minim</p>
+    <p>Qui do proident consequat</p>
+    <p>Aliquip eu qui ea ut</p>
+    <p>Duis fugiat adipisicing</p>
+</div>
+
+</body>
+</html>

@@ -17,23 +17,26 @@
         border-radius: 10px;
     }
 </style>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+  var colors = ['red', 'green', 'blue']
+  var currentColor = 0
+$(document).ready(function(){
+	$('div').css({
+	    backgroundColor: colors[currentColor]
+	  }).click(function () {
+	    currentColor = (currentColor + 1) % 3
+	    $(this).css({
+	      backgroundColor: colors[currentColor]
+	    })
+	  })
+});
+
+</script>
 
 </head>
 <body>
 <div>클릭</div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script>
-  var colors = ['red', 'green', 'blue']
-  var currentColor = 0
-  $('div').css({
-    backgroundColor: colors[currentColor]
-  }).click(function () {
-    currentColor = (currentColor + 1) % 3
-    $(this).css({
-      backgroundColor: colors[currentColor]
-    })
-  })
-</script>
 </body>
 </html>
