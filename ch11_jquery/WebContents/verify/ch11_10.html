@@ -1,0 +1,26 @@
+<!DOCTYPE html><html>
+<head><meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$().ready(function(){
+	$('div').hover(function(){$(this).css('opacity',0.5)}, 
+			       function(){$(this).css('opacity',1)  });
+  });
+</script>
+<style>
+    div {
+        width: 100px;
+        height: 50px;
+        line-height: 50px; /* 글자를 수직 중앙정렬 합니다. */
+        text-align: center; /* 글자를 수평 중앙정렬 합니다. */
+        color: white;
+        background-color: teal;
+        border-radius: 20px;
+    }
+</style>
+</head>
+<body>
+<div>버튼</div>
+</body>
+</html>
